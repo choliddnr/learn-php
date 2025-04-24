@@ -26,6 +26,7 @@ class ComposerStaticInite9741a77b68af20ba296a5419dc60776
         ),
         'A' => 
         array (
+            'App\\COntrollers\\' => 16,
             'App\\' => 4,
         ),
     );
@@ -42,6 +43,10 @@ class ComposerStaticInite9741a77b68af20ba296a5419dc60776
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'App\\COntrollers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/controllers',
         ),
         'App\\' => 
         array (

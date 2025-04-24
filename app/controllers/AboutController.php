@@ -1,11 +1,9 @@
 <?php
 namespace App\Controllers;
 
-require_once __DIR__ . "/../core/BaseController.php";
+use App\Core\Controller;
 
-use App\Controllers\BaseController;
-
-class AboutController extends BaseController
+class AboutController extends Controller
 {
     public function index()
     {

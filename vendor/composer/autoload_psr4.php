@@ -9,5 +9,6 @@ return array(
     'Tests\\' => array($baseDir . '/tests'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
+    'App\\COntrollers\\' => array($baseDir . '/app/controllers'),
     'App\\' => array($baseDir . '/app'),
 );

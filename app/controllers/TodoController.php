@@ -1,83 +1,98 @@
 <?php
 namespace App\Controllers;
 
-require_once __DIR__ . "/../core/BaseController.php";
 
-use App\Controllers\BaseController;
-use App\Models\TodoModel;
+use App\Core\Controller;
+use App\Core\Database;
+use App\Models\TodoCreateRequest;
+// use App\Models\TodoModel;
+use App\Models\TodoUpdateRequest;
+use App\Services\SessionService;
+use App\Services\TodoService;
 use DateTime;
 
-class TodoController extends BaseController
+class TodoController extends Controller
 {
-    protected $todos;
-    // public $thetodos;
+    // protected $todos;
+    private TodoService $todo_service;
+    private \PDO $pdo;
 
     public function __construct()
     {
-        // $this->thetodos = [
-        //     ['id' => 1, "title" => "Todo A", 'description' => "Description todo A", "deadline" => new DateTime()->getTimestamp(), 'status' => "ongoing"],
-        //     ['id' => 2, "title" => "Todo B", 'description' => "Description todo B", "deadline" => new DateTime()->getTimestamp(), 'status' => "delayed"],
-        //     ['id' => 3, "title" => "Todo C", 'description' => "Description todo C", "deadline" => new DateTime()->getTimestamp(), 'status' => "ongoing"],
-        //     ['id' => 4, "title" => "Todo D", 'description' => "Description todo D", "deadline" => new DateTime()->getTimestamp(), 'status' => "done"],
-        //     ['id' => 5, "title" => "Todo E", 'description' => "Description todo E", "deadline" => new DateTime()->getTimestamp(), 'status' => "delayed"],
-        //     ['id' => 6, "title" => "Todo F", 'description' => "Description todo F", "deadline" => new DateTime()->getTimestamp(), 'status' => "ongoing"],
-        //     ['id' => 7, "title" => "Todo G", 'description' => "Description todo G", "deadline" => new DateTime()->getTimestamp(), 'status' => "done"],
-        //     ['id' => 8, "title" => "Todo H", 'description' => "Description todo H", "deadline" => new DateTime()->getTimestamp(), 'status' => "delayed"],
-        //     ['id' => 9, "title" => "Todo I", 'description' => "Description todo I", "deadline" => new DateTime()->getTimestamp(), 'status' => "ongoing"],
-        //     ['id' => 10, "title" => "Todo J", 'description' => "Description todo J", "deadline" => new DateTime()->getTimestamp(), 'status' => "delayed"],
-        //     ['id' => 11, "title" => "Todo K", 'description' => "Description todo K", "deadline" => new DateTime()->getTimestamp(), 'status' => "done"],
-        //     ['id' => 12, "title" => "Todo L", 'description' => "Description todo L", "deadline" => new DateTime()->getTimestamp(), 'status' => "ongoing"],
-        //     ['id' => 13, "title" => "Todo M", 'description' => "Description todo M", "deadline" => new DateTime()->getTimestamp(), 'status' => "done"],
-        //     ['id' => 14, "title" => "Todo N", 'description' => "Description todo N", "deadline" => new DateTime()->getTimestamp(), 'status' => "delayed"],
-        // ];
-        $this->todos = new TodoModel();
+        $this->pdo = Database::connect();
+        $this->todo_service = new TodoService();
     }
     public function index()
     {
-
-        // for ($i = 0; $i < 14; $i++) {
-        //     $this->todos->createTodo($this->thetodos[$i]['title'], $this->thetodos[$i]['description'], $this->thetodos[$i]['status'], time(), );
-
-        // }
-        return $this->view('todo/index', ['todos' => $this->todos->getAll()]);
+        return $this->view('todo/index', ['todos' => $this->todo_service->getAll()]);
     }
 
     public function getCreateForm()
     {
+        $data = [
+            'errors' => $this->getFlashData('errors'),
+            'form' => $this->getFlashData('form'),
+        ];
+        var_dump($data);
 
-        return $this->view('todo/createform');
+        return $this->view('todo/createform', $data);
     }
     public function getUpdateForm($id)
     {
-        // Load the about view
         $data = [
-            'task' => $this->todos->getTodo($id)
+            'id' => $id,
+            'form' => $this->getFlashData('form') ?? $this->todo_service->getById($id),
+            'errors' => $this->getFlashData('errors'),
         ];
-        // echo $test;
         return $this->view('todo/updateform', $data);
     }
 
     public function showTodo($id)
     {
-        $task = $this->todos->getTodo($id);
-        return $this->view('todo/show', ['task' => $task]);
+        $flash_data = $this->getFlashData('todo');
+        $todo = $flash_data ?? $this->todo_service->getById($id);
+        return $this->view('todo/show', ['todo' => $todo]);
     }
 
     public function createTodo()
     {
-        $id = $this->todos->createTodo($_POST['title'], $_POST['description'], $_POST['status'], strtotime($_POST['deadline']), );
-        // var_dump($todo);
-        return $this->redirect('/todo/' . $id);
-    }
+        $request = new TodoCreateRequest($_POST['title'], $_POST['description'], $_POST['deadline']);
 
+        $response = $this->todo_service->create($request);
+        if (!empty($response->errors)) {
+            $this->setFlashData('errors', $response->errors);
+            $this->setFlashData('form', $request);
+            $this->redirect('/todo/create');
+        }
+        $this->setFlashData('todo', $response->todo);
+        $this->redirect('/todo/' . $response->todo->id);
+
+
+    }
     public function deleteTodo($id)
     {
-        return $this->todos->deleteTodo($id);
+        return $this->todo_service->delete($id);
     }
 
     public function updateTodo($id)
     {
-        $this->todos->updateTodo($id, $_POST['title'], $_POST['description'], $_POST['status'], strtotime($_POST['deadline']));
-        return $this->redirect("/todo/" . (string) $id);
+        $request = new TodoUpdateRequest($id, $_POST['title'], $_POST['description'], $_POST['status'], $_POST['deadline']);
+
+        $response = $this->todo_service->update($request);
+
+        if (!empty($response->errors)) {
+            $this->setFlashData('errors', $response->errors);
+            $this->setFlashData('form', $request);
+            $this->redirect('/todo/' . $id . '/update');
+            return;
+        }
+        $this->setFlashData('todo', $response->todo);
+        $this->redirect('/todo/' . $response->todo->id);
+    }
+
+    public function delete($id)
+    {
+        $this->todo_service->delete($id);
+        $this->redirect('/todo');
     }
 }

@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+class TodoUpdateRequest
+{
+    public ?int $id = null;
+    public ?string $title = null;
+    public ?string $description = null;
+    public ?string $status = null;
+    public ?string $deadline = null;
+
+    public function __construct(?int $id, ?string $title, ?string $description, ?string $status, ?string $deadline)
+    {
+        $this->id = $id;
+        $this->title = $title;
+        $this->description = $description;
+        $this->status = $status;
+        $this->deadline = $deadline;
+    }
+}

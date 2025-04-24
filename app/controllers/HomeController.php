@@ -2,12 +2,29 @@
 
 namespace App\Controllers;
 
-class HomeController
+use App\Core\Controller;
+use App\Services\SessionService;
+use App\Services\UserService;
+
+class HomeController extends Controller
 {
+
+    public UserService $user_service;
+
+    public function __construct()
+    {
+        $this->user_service = new UserService();
+    }
     public function index()
     {
         // Load the index view
-        include_once __DIR__ . '/../views/index.php';
+        // return $this->redirect('/todo');
+        $user = $this->getFlashData('user');
+        $data = [
+            'user' => $user ?? $this->user_service->getById(SessionService::$user_id),
+        ];
+        // var_dump($data);
+        return $this->view("index", $data);
     }
 
     public function about()

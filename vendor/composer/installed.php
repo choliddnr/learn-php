@@ -1,15 +1,24 @@
 <?php return array(
     'root' => array(
-        'name' => 'windows/learn-php',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'name' => 'cholid.dnr/learn-php',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '8b67ca7d2df36d039e3e8d7851a1cba02add2081',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'cholid.dnr/learn-php' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '8b67ca7d2df36d039e3e8d7851a1cba02add2081',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'myclabs/deep-copy' => array(
             'pretty_version' => '1.13.0',
             'version' => '1.13.0.0',
@@ -243,15 +252,6 @@
             'install_path' => __DIR__ . '/../theseer/tokenizer',
             'aliases' => array(),
             'dev_requirement' => true,
-        ),
-        'windows/learn-php' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
-            'type' => 'project',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'dev_requirement' => false,
         ),
     ),
 );

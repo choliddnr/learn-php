@@ -1,10 +1,10 @@
 {
-  "name": "windows/learn-php",
+  "name": "cholid.dnr/learn-php",
   "description": "learn php",
   "type": "project",
   "authors": [
     {
-      "name": "choliddnr",
+      "name": "cholid.dnr",
       "email": "cholid.dnr@gmail.com"
     }
   ],

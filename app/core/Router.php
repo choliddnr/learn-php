@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Router;
+
+use App\Middleware\Middleware;
 class Router
 {
     private static $routes = [];
 
 
 
-    public static function add($path, $method, $controller, $function, $args = [])
+    public static function add($path, $method, $controller, $function, $middleware = [])
     {
         $segments = explode('/', $path);
         $segments = array_values(array_filter($segments, function ($segment) {
@@ -26,21 +28,46 @@ class Router
             'paths' => $paths,
             'controller' => $controller,
             'function' => $function,
+            'middleware' => $middleware
         ];
 
+    }
+
+    protected static function executeRoute($route, $params = [])
+    {
+
+        // echo "path: " . $path . "<br>";
+        // echo "method: " . $method . "<br>";
+        // echo "cookie: " . $_COOKIE['X-TSURAYYA-SESSION-ID'] . "<br>";
+        // echo "Controller: " . $route['controller'] . "<br>";
+        // echo "Function: " . $route['function'] . "<br>";
+        // echo "Params: ";
+        // print_r($route['middleware']);
+        // echo "<br>";
+        // print_r($params);
+
+        if (count($route['middleware']) > 0) {
+            foreach ($route['middleware'] as $middleware) {
+                $middleware = new $middleware();
+                $middleware->before();
+            }
+        }
+
+        $controller = new $route['controller']();
+        $function = $route['function'];
+        // call_user_func_array($controller, )
+        return $controller->$function(...$params);
     }
 
 
     public static function dispatch($path, $method)
     {
 
-        // echo "path: " . $path . "<br>";
-        // echo "method: " . $method . "<br>";
 
-        // $uri_path = null;
         $params = [];
         $controller = null;
         $function = null;
+
 
         foreach (self::$routes as $route) {
 
@@ -49,49 +76,69 @@ class Router
             }
 
             $routePaths = $route['paths'];
+            $routePathsNumber = count($routePaths);
+
+            if ($routePathsNumber === 0 && $path === '/') {
+                // $controller = new $route['controller'];
+                // $function = $route['function'];
+                // return $controller->$function();
+                return self::executeRoute($route);
+                // break;
+            }
+
+
             $path_segments = explode('/', $path);
             $path_segments = array_values(array_filter($path_segments, function ($segment) {
                 return !empty($segment);
             }));
-            if (count($routePaths) !== count($path_segments))
+
+
+
+            if ($routePathsNumber !== count($path_segments)) {
                 continue;
-
-            if ($path === '/' && count($routePaths) === 0) {
-                $controller = new $route['controller'];
-                $function = $route['function'];
-                return $controller->$function();
-            } elseif (count($routePaths) === 0) {
-                continue;
-            } else {
-
-                $params = [];
-
-                for ($i = 0; $i < count($routePaths); $i++) {
-                    if ($routePaths[$i]['is_param']) {
-                        if (isset($path_segments[$i])) {
-                            $params[$routePaths[$i]['name']] = $path_segments[$i];
-                        } else {
-                            $params = [];
-                            break;
-                        }
-                    } else {
-                        if ($routePaths[$i]['name'] !== $path_segments[$i]) {
-                            break;
-                        }
-                    }
-                    if ($i === count($routePaths) - 1) {
-
-                        // echo "Controller: " . $route['controller'] . "<br>";
-                        // echo "Function: " . $route['function'] . "<br>";
-                        // echo "Params: ";
-                        // print_r($params);
-                        $controller = new $route['controller']();
-                        $function = $route['function'];
-                        return $controller->$function(...$params);
-                    }
-
-                }
             }
+
+
+            $params = [];
+            for ($i = 0; $i < $routePathsNumber; $i++) {
+                if ($routePaths[$i]['is_param']) {
+                    if (isset($path_segments[$i])) {
+                        $params[$routePaths[$i]['name']] = $path_segments[$i];
+                    } else {
+                        $params = [];
+                        break;
+                    }
+                } else {
+                    if ($routePaths[$i]['name'] !== $path_segments[$i]) {
+                        break;
+                    }
+                }
+                if ($i === $routePathsNumber - 1) {
+
+                    // // echo "Controller: " . $route['controller'] . "<br>";
+                    // // echo "Function: " . $route['function'] . "<br>";
+                    // // echo "Params: ";
+                    // // print_r($route['middleware']);
+                    // // echo "<br>";
+                    // // print_r($params);
+
+                    // if (count($route['middleware']) > 0) {
+                    //     foreach ($route['middleware'] as $middleware) {
+                    //         $middleware = new $middleware();
+                    //         $middleware->before();
+                    //     }
+                    // }
+
+                    // $controller = new $route['controller']();
+                    // $function = $route['function'];
+                    // // call_user_func_array($controller, )
+                    // return $controller->$function(...$params);
+
+                    return self::executeRoute($route, $params);
+                }
+
+            }
+            // }
 
         }
         http_response_code(404);
