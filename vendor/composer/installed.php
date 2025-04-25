@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'cholid.dnr/learn-php',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => '8b67ca7d2df36d039e3e8d7851a1cba02add2081',
+        'pretty_version' => '0.1.0.x-dev',
+        'version' => '0.1.0.9999999-dev',
+        'reference' => 'f259f166d22d4d0a715ff1760d21ca38e8f75fd1',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'cholid.dnr/learn-php' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '8b67ca7d2df36d039e3e8d7851a1cba02add2081',
+            'pretty_version' => '0.1.0.x-dev',
+            'version' => '0.1.0.9999999-dev',
+            'reference' => 'f259f166d22d4d0a715ff1760d21ca38e8f75fd1',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

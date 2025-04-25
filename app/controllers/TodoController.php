@@ -33,7 +33,6 @@ class TodoController extends Controller
             'errors' => $this->getFlashData('errors'),
             'form' => $this->getFlashData('form'),
         ];
-        var_dump($data);
 
         return $this->view('todo/createform', $data);
     }

@@ -5,6 +5,7 @@ require_once __DIR__ . '/../vendor/autoload.php'; // Autoload dependencies
 require_once __DIR__ . '/../app/router/routes.php'; // Load routes
 
 
+
 // Get the full request URI (e.g. "/path/to/page?foo=bar")
 // $requestUri = $_SERVER['REQUEST_URI'];
 
