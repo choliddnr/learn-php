@@ -4,6 +4,7 @@ namespace App\Middlewares;
 
 require_once __DIR__ . '/../core/Middleware.php';
 
+use App\Core\Middleware;
 use App\Services\SessionService;
 
 

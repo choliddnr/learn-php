@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../core/Router.php";
+// require_once __DIR__ . "/../core/Router.php";
 
 use App\Controllers\AboutController;
 use App\Controllers\AuthController;
@@ -7,7 +7,7 @@ use App\Controllers\HomeController;
 use App\Controllers\TodoController;
 use App\Controllers\UserController;
 use App\Middlewares\AuthMiddleware;
-use App\Router\Router;
+use App\Core\Router;
 
 Router::add('/', 'GET', HomeController::class, 'index', [AuthMiddleware::class]);
 Router::add('/about', 'GET', AboutController::class, 'index');

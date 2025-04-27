@@ -1,8 +1,6 @@
 <?php
 
-namespace App\Router;
-
-use App\Middleware\Middleware;
+namespace App\Core;
 class Router
 {
     private static $routes = [];
