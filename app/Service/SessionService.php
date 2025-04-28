@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services;
+namespace App\Service;
 
 use App\Domain\Session;
 use App\Domain\User;
-use App\Repositories\SessionRepository;
+use App\Repository\SessionRepository;
 
 
 class SessionService

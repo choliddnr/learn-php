@@ -1,14 +1,14 @@
 <?php
-namespace App\Controllers;
+namespace App\Controller;
 
 
 use App\Core\Controller;
 use App\Core\Database;
-use App\Models\TodoCreateRequest;
+use App\Model\TodoCreateRequest;
 // use App\Models\TodoModel;
-use App\Models\TodoUpdateRequest;
-use App\Services\SessionService;
-use App\Services\TodoService;
+use App\Model\TodoUpdateRequest;
+use App\Service\SessionService;
+use App\Service\TodoService;
 use DateTime;
 
 class TodoController extends Controller

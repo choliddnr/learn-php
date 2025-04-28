@@ -1,11 +1,11 @@
 <?php
-namespace App\Controllers;
+namespace App\Controller;
 
 use App\Core\Controller;
-use App\Models\UserLoginRequest;
-use App\Models\UserRegisterRequest;
-use App\Services\SessionService;
-use App\Services\UserService;
+use App\Model\UserLoginRequest;
+use App\Model\UserRegisterRequest;
+use App\Service\SessionService;
+use App\Service\UserService;
 
 class AuthController extends Controller
 {

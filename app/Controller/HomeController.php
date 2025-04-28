@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controller;
 
 use App\Core\Controller;
-use App\Services\SessionService;
-use App\Services\UserService;
+use App\Service\SessionService;
+use App\Service\UserService;
 
 class HomeController extends Controller
 {

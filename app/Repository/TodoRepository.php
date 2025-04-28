@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repository;
 
 use App\Core\Database;
 use App\Domain\Todo;
-use App\Models\TodoCreateRequest;
-use App\Models\TodoUpdateRequest;
-use App\Services\SessionService;
+use App\Model\TodoCreateRequest;
+use App\Model\TodoUpdateRequest;
+use App\Service\SessionService;
 
 class TodoRepository
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Middlewares;
+namespace App\Middleware;
 
 require_once __DIR__ . '/../core/Middleware.php';
 
 use App\Core\Middleware;
-use App\Services\SessionService;
+use App\Service\SessionService;
 
 
 class AuthMiddleware implements Middleware

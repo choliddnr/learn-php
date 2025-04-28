@@ -9,7 +9,7 @@ class Controller
         if (count($data)) {
             extract($data);
         }
-        require_once __DIR__ . "/../views/" . $view . ".php";
+        require_once __DIR__ . "/../View/" . $view . ".php";
     }
 
     public function redirect($url)

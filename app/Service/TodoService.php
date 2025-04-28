@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Services;
+namespace App\Service;
 
 use App\Core\Database;
 use App\Domain\Todo;
-use App\Models\TodoCreateRequest;
-use App\Models\TodoCreateResponse;
-use App\Models\TodoUpdateRequest;
-use App\Models\TodoUpdateResponse;
-use App\Repositories\TodoRepository;
+use App\Model\TodoCreateRequest;
+use App\Model\TodoCreateResponse;
+use App\Model\TodoUpdateRequest;
+use App\Model\TodoUpdateResponse;
+use App\Repository\TodoRepository;
+use App\Service\SessionService;
 
 class TodoService
 {

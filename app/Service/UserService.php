@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Services;
+namespace App\Service;
 
 use App\Core\Database;
 use App\Domain\User;
-use App\Models\UserLoginRequest;
-use App\Models\UserLoginResponse;
-use App\Models\UserRegisterResponse;
-use App\Models\UserUpdateProfileRequest;
-use App\Models\UserUpdateProfileResponse;
-use App\Repositories\UserRepository;
-use App\Models\UserRegisterRequest;
+use App\Model\UserLoginRequest;
+use App\Model\UserLoginResponse;
+use App\Model\UserRegisterResponse;
+use App\Model\UserUpdateProfileRequest;
+use App\Model\UserUpdateProfileResponse;
+use App\Repository\UserRepository;
+use App\Model\UserRegisterRequest;
 class UserService
 {
     private UserRepository $user_repository;

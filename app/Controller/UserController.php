@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controller;
 
 use App\Core\Controller;
-use App\Models\UserUpdateProfileRequest;
-use App\Services\SessionService;
-use App\Services\UserService;
+use App\Model\UserUpdateProfileRequest;
+use App\Service\SessionService;
+use App\Service\UserService;
 
 class UserController extends Controller
 {
