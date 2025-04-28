@@ -3,7 +3,7 @@
         'name' => 'cholid.dnr/learn-php',
         'pretty_version' => '0.1.0.x-dev',
         'version' => '0.1.0.9999999-dev',
-        'reference' => 'd7d9361f1052c68bdc5a34824468b7630892bc10',
+        'reference' => '9c6a2f9482d19ed5c7c2bf08464354b289d46964',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'cholid.dnr/learn-php' => array(
             'pretty_version' => '0.1.0.x-dev',
             'version' => '0.1.0.9999999-dev',
-            'reference' => 'd7d9361f1052c68bdc5a34824468b7630892bc10',
+            'reference' => '9c6a2f9482d19ed5c7c2bf08464354b289d46964',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
