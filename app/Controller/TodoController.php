@@ -25,6 +25,7 @@ class TodoController extends Controller
     public function index()
     {
         return $this->view('todo/index', ['todos' => $this->todo_service->getAll()]);
+        // echo "fldsgjdlisk";
     }
 
     public function getCreateForm()

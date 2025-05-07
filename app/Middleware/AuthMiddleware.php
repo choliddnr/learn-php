@@ -1,9 +1,5 @@
 <?php
-
 namespace App\Middleware;
-
-require_once __DIR__ . '/../core/Middleware.php';
-
 use App\Core\Middleware;
 use App\Service\SessionService;
 
@@ -26,6 +22,8 @@ class AuthMiddleware implements Middleware
             header('Location: /login');
             exit;
         }
+
+        // exit;
     }
 
 }

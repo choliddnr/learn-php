@@ -1,0 +1,23 @@
+
+# PHP specific
+/vendor/
+/.env
+
+# SQLite
+*.sqlite
+*.sqlite3
+
+# VS Code
+.vscode/
+
+# Composer
+composer.lock
+
+# Node (if applicable)
+node_modules/
+vendor/
+
+# .zip file
+*.zip
+
+
