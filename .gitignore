@@ -4,8 +4,8 @@
 /.env
 
 # SQLite
-*.sqlite
-*.sqlite3
+# *.sqlite
+# *.sqlite3
 
 # VS Code
 .vscode/
@@ -15,7 +15,7 @@ composer.lock
 
 # Node (if applicable)
 node_modules/
-vendor/
+
 
 # .zip file
 *.zip
