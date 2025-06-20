@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landingpage</title>
-    <script type="module" src="http://localhost:5173/resources/index.js"></script>
+    <link rel="stylesheet" href="dist/assets/app-Onh9qx84.css">
+    <script type="module" src="dist/assets/app-CWQh9Bv8.js"></script>
 
 </head>
 
