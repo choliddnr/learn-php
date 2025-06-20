@@ -150,4 +150,4 @@ Nuxt UI Pro is free in development, but you need a license to use it in producti
 - **[License](https://ui.nuxt.com/getting-started/license)** — Icon: `i-lucide-circle-help`, Variant: `subtle`
 
 
-**i 1**
+**i 2**
