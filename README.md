@@ -148,3 +148,6 @@ Nuxt UI Pro is free in development, but you need a license to use it in producti
 
 - **[Buy now](https://ui.nuxt.com/pro/purchase)** — Icon: `i-lucide-shopping-cart`
 - **[License](https://ui.nuxt.com/getting-started/license)** — Icon: `i-lucide-circle-help`, Variant: `subtle`
+
+
+**i 1**
