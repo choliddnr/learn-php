@@ -14,7 +14,7 @@
 composer.lock
 
 # Node (if applicable)
-node_modules/
+/node_modules/
 
 
 # .zip file

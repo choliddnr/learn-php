@@ -2,8 +2,10 @@
 // require_once __DIR__ . "/../core/Router.php";
 
 use App\Controller\AboutController;
+use App\Controller\LandingpageController;
 use App\Controller\AuthController;
 use App\Controller\HomeController;
+use App\Controller\TestController;
 use App\Controller\TodoController;
 use App\Controller\UserController;
 use App\Middleware\AuthMiddleware;
@@ -29,6 +31,11 @@ Router::add('/logout', 'GET', AuthController::class, 'logout', [AuthMiddleware::
 Router::add('/user/update', 'GET', UserController::class, 'getProfileUpdateForm', [AuthMiddleware::class]);
 Router::add('/user/update', 'Post', UserController::class, 'updateProfile', [AuthMiddleware::class]);
 Router::add('/user', 'DELETE', UserController::class, 'delete', [AuthMiddleware::class]);
+
+Router::add('/landingpage', 'GET', LandingpageController::class, 'index');
+Router::add('/test', 'GET', TestController::class, 'index');
+
+
 
 
 Router::run();

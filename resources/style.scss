@@ -1,0 +1,423 @@
+$lp-neutral-0: #fff; //
+$lp-neutral-50: #f8f9fa;
+$lp-neutral-100: #f2f3f6;
+$lp-neutral-200: #d8dae0;
+$lp-neutral-300: #6d7081; //
+$lp-neutral-400: #3b3d4a;
+$lp-neutral-500: #262831; //
+$lp-neutral-600: #1d1e20;
+$lp-neutral-700: #161718;
+$lp-neutral-800: #000;
+$lp-primary-50: #f1ecff;
+$lp-primary-100: #e2dbfc; //
+$lp-primary-200: #c5b8f8;
+$lp-primary-300: #b39ef3;
+$lp-primary-400: #7253ee;
+$lp-primary-500: #673de6; //
+$lp-primary-600: #5025d1; //
+$lp-primary-700: #45209d;
+$lp-primary-800: #2f1c6a;
+$lp-primary-900: #261559;
+$lp-primary-1000: #1f1346;
+$lp-meteorite-50: #f5f5ff;
+$lp-meteorite-100: #eaeaff;
+$lp-meteorite-200: #cbc8ff;
+$lp-meteorite-300: #b6b2ff;
+$lp-meteorite-400: #a19bff;
+$lp-meteorite-500: #8c85ff;
+$lp-lightblue-50: #fafbff;
+$lp-lightblue-100: #f4f5ff;
+$lp-lightblue-200: #d5dfff;
+$lp-lightblue-300: #c3cce9;
+$lp-lightblue-400: #b0b9d4;
+$lp-lightblue-500: #888faa;
+$lp-danger-50: #fff3f7;
+$lp-danger-100: #ffe8ef;
+$lp-danger-200: #fea8c2;
+$lp-danger-300: #fd8bad;
+$lp-danger-400: #fc6e99;
+$lp-danger-500: #fc5185;
+$lp-danger-600: #d63163;
+$lp-danger-700: #b22852;
+$lp-warning-100: #fff8e2;
+$lp-warning-200: #ffd28c;
+$lp-warning-500: #ffcd35;
+$lp-warning-600: #fea419;
+$lp-warning-700: #9f6000;
+$lp-success-100: #def4f0;
+$lp-success-200: #80d8c8;
+$lp-success-500: #00b090;
+$lp-success-600: #008361;
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
+$font-family-sans-serif: 'DM Sans', system-ui, -apple-system, sans-serif;
+
+// $popover-bg: $lp-primary-600;
+// $popover-body-color:  $lp-neutral-0;
+// $popover-arrow-width: 0px;
+// $popover-arrow-height: 0px;
+
+
+@import "bootstrap/scss/bootstrap";
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+
+
+$lp-colors: (
+    "lp-neutral-0": $lp-neutral-0,
+    //   mbo_bg_btn_hover,
+    "lp-neutral-50": $lp-neutral-50,
+    "lp-neutral-100": $lp-neutral-100,
+    "lp-neutral-200": $lp-neutral-200,
+    "lp-neutral-300": $lp-neutral-300,
+    //pricing_text_not_included
+    "lp-neutral-400": $lp-neutral-400,
+    "lp-neutral-500": $lp-neutral-500,
+    // pricing_text_desc,
+    "lp-neutral-600": $lp-neutral-600,
+    "lp-neutral-700": $lp-neutral-700,
+    "lp-neutral-800": $lp-neutral-800,
+    "lp-primary-50": $lp-primary-50,
+    "lp-primary-100": $lp-primary-100,
+    // hero_bg_coundounw, pricing_bg_2cta_btn_hover
+    "lp-primary-200": $lp-primary-200,
+    "lp-primary-300": $lp-primary-300,
+    "lp-primary-400": $lp-primary-400,
+    "lp-primary-500": $lp-primary-500,
+    // hero_bg_cta_btn, hero_text_2, pricing_text_2 pricing_bg_cta_btn
+    "lp-primary-600": $lp-primary-600,
+    // hero_bg_cta_btn_hover, pricing_text_2 pricing_bg_cta_btn_hover
+    "lp-primary-700": $lp-primary-700,
+    "lp-primary-800": $lp-primary-800,
+    //{main text color} hero_text_1, pricing_text, mbo_text
+    "lp-primary-900": $lp-primary-900,
+    "lp-primary-1000": $lp-primary-1000,
+    "lp-meteorite-50": $lp-meteorite-50,
+    "lp-meteorite-100": $lp-meteorite-100,
+    "lp-meteorite-200": $lp-meteorite-200,
+    "lp-meteorite-300": $lp-meteorite-300,
+    "lp-meteorite-400": $lp-meteorite-400,
+    "lp-meteorite-500": $lp-meteorite-500,
+    //pricing_bg_card_highlight, 
+    "lp-lightblue-50": $lp-lightblue-50,
+    //pricing_bg_card,
+    "lp-lightblue-100": $lp-lightblue-100,
+    //   mbo_bg_btn,
+    "lp-lightblue-200": $lp-lightblue-200,
+    //   mbo_bg_btn_active, pricing_bg_badge
+    "lp-lightblue-300": $lp-lightblue-300,
+    "lp-lightblue-400": $lp-lightblue-400,
+    "lp-lightblue-500": $lp-lightblue-500,
+    "lp-danger-50": $lp-danger-50,
+    "lp-danger-100": $lp-danger-100,
+    "lp-danger-200": $lp-danger-200,
+    "lp-danger-300": $lp-danger-300,
+    "lp-danger-400": $lp-danger-400,
+    "lp-danger-500": $lp-danger-500,
+    "lp-danger-600": $lp-danger-600,
+    "lp-danger-700": $lp-danger-700,
+    "lp-warning-100": $lp-warning-100,
+    "lp-warning-200": $lp-warning-200,
+    "lp-warning-500": $lp-warning-500,
+    "lp-warning-600": $lp-warning-600,
+    "lp-warning-700": $lp-warning-700,
+    "lp-success-100": $lp-success-100,
+    "lp-success-200": $lp-success-200,
+    "lp-success-500": $lp-success-500,
+    // hero_check_icon
+    "lp-success-600": $lp-success-600,
+);
+
+$all-colors: map-merge-multiple($blues, $indigos, $purples, $pinks, $reds, $oranges, $yellows, $greens, $teals, $cyans, $lp-colors);
+
+$utilities: map-merge($utilities,
+        (
+            "color": map-merge(map-get($utilities, "color"),
+                    (values: map-merge(map-get(map-get($utilities, "color"), "values"), $all-colors ), state:hover)
+                    ),
+            "background-color": map-merge(
+                                    map-get($utilities, "background-color"),
+                                    (
+                                        values: map-merge(
+                                            map-get(
+                                                map-get($utilities, "background-color"), 
+                                                "values"
+                                            ),
+                                            $all-colors 
+                                        ),
+                                        state:hover
+                                    )
+                                ),
+            "border-color": map-merge(map-get($utilities, "border-color"),
+                    (values: map-merge(map-get(map-get($utilities, "border-color"), "values"),$all-colors ))
+                    )
+        )
+);
+
+// $utilities: map-merge(
+//   $utilities, (
+//     "background-color": map-merge(
+//       map-get($utilities, "background-color"),
+//       ( state: hover ),
+//     ),
+//   )
+// );
+
+@import "bootstrap/scss/utilities/api";
+
+
+
+
+// Components
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-card {
+    flex: 0 0 auto;
+    width: 300px;
+    height: auto;
+    margin: 0 10px;
+    border-color: #{$lp-lightblue-200};
+    margin-top: 40px;
+
+    &.pricing-highlight {
+        margin-top: 0px;
+        border-color: #{$lp-primary-400};
+
+        .card-title {
+            background-color: #{$lp-primary-400};
+            color: #{$white};
+            text-align: center;
+            height: 40px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+    margin-top: 40px;
+
+
+}
+
+#mbo {
+    button {
+        background-color: #{$lp-lightblue-100};
+        padding: 10px 24px;
+
+        &:hover {
+            background-color: #{$white};
+        }
+
+        &.active {
+            background-color: #{$lp-lightblue-200};
+        }
+
+    }
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.carousel-controls button {
+    pointer-events: all;
+}
+
+
+
+.custom-popover {
+    --bs-popover-bg: #{$lp-primary-600};
+    --bs-popover-body-color: #{$white};
+    --bs-popover-arrow-width: 0px;
+    --bs-popover-arrow-height: 0px;
+}
+
+#btn-login {
+    background-color: $white;
+    color: $black;
+    padding-top: 12px;
+    padding-bottom: 16px;
+}
+
+;
+
+nav>.dropdown-menu {
+    background-color: $lp-danger-600;
+}
+
+.menu-content {
+    display: none;
+}
+
+.bg-cta {
+    background-color: #{$lp-primary-500};
+
+    &:hover {
+        background-color: #{$lp-primary-600};
+    }
+}
+
+.divider {
+    border-top: 1px solid;
+    margin-bottom: 32px;
+    width: 100%;
+    border-color: #{$lp-lightblue-200};
+}
+
+.underline-dashed {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+}
+
+.list-feature {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 3px;
+}
+
+
+
+
+
+// Utilities
+.size-4 {
+    width: 16px;
+    height: 16px;
+}
+
+.size-6 {
+    width: 24px;
+    height: 24px;
+}
+
+.fs-14 {
+    font-size: .875rem;
+}
+
+.fs-12 {
+    font-size: .75rem;
+}
+
+.fs-36 {
+    font-size: 2.25rem;
+}
+
+.px-30 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.px-12 {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.p-40 {
+    padding: 40px;
+}
+
+#mbo .card-bg-gradient {
+    // background-image: linear-gradient(180deg, rgba($lp-primary-600, .95), rgba($white, 0));
+
+    background: linear-gradient(125deg, rgba($lp-primary-600, .55) 0%, #000000 30%, #000000 100%);
+    /* Customize for your purple tones */
+}
+
+.play-icon-container {
+    background-color: #{$lp-neutral-800};
+    border-radius: 50%;
+    height: 80px;
+    opacity: .5;
+    position: absolute;
+    width: 80px;
+}
+
+#kldsd .content-text {
+    
+    width: 100%;
+    padding: 56px 16px;
+    @media(min-width:992px) {
+
+        margin-left: 96px;
+        padding-left: 0;
+        padding-right: 0px;
+        width: 360px;
+    }
+}
+#kldsd>div{
+    height: auto;
+    @media(min-width:992px) {
+        height: 670px;
+    }
+}
+
+// .menu-link{
+//     &.menu-active {
+//         .up {
+//             display: none;
+//         }
+//         .down {
+//             display: block;
+//         }
+//     }
+//     .up {
+//         display: block;
+//     }
+//     .down {
+//         display: none;
+//     }
+// }
+
+.dropdown {
+    .nav-link {
+       
+           .down {
+                display: flex;
+            }
+            .up {
+                display: none;
+            } 
+
+        &.show{ 
+            background-color: #{$lp-lightblue-100};
+            .up {
+                display: flex;
+            }
+            .down {
+                display: none;
+            }
+        }
+    }
+}
