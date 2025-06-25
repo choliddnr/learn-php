@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Core\Controller;
@@ -35,11 +36,9 @@ class AuthController extends Controller
 
     public function register()
     {
-
-
-        $request = new UserRegisterRequest($_POST['name'], $_POST['email'], $_POST['password'], $_POST['confirm_password']);
-
+        $request = new UserRegisterRequest($_POST['username'], $_POST['email'], $_POST['password'], $_POST['confirm_password']);
         $response = $this->user_service->register($request);
+
         if (count($response->errors) > 0) {
 
             $this->setFlashData('errors', $response->errors);
@@ -61,8 +60,6 @@ class AuthController extends Controller
         }
         $this->session_service->create($response->user->id);
         $this->redirect('/todo');
-
-
     }
 
     public function logout()

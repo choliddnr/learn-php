@@ -9,12 +9,15 @@
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.4",
+    "alpinejs": "^3.14.9",
     "bootstrap": "^5.3.6",
     "sass": "^1.87.0",
     "tailwindcss": "^4.1.4",
     "vite-plugin-full-reload": "^1.2.0"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.10",
+    "@types/alpinejs": "^3.13.11",
     "@types/bun": "latest",
     "vite": "^6.3.5"
   },

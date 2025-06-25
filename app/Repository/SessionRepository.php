@@ -8,7 +8,7 @@ use App\Domain\Session;
 
 class SessionRepository
 {
-    private \PDO $pdo;// Assuming you have a Database class that handles the connection
+    private \PDO $pdo; // Assuming you have a Database class that handles the connection
     protected string $table;
 
     public function __construct()
@@ -16,12 +16,12 @@ class SessionRepository
         try {
             $this->pdo = Database::connect();
 
-            $this->table = 'sessions';
-            $this->pdo->exec("CREATE TABLE IF NOT EXISTS " . $this->table . " (
-                                            id TEXT PRIMARY KEY AUTOINCREMENT,
-                                            user_id INTEGER NOT NULL,
-                                            FOREIGN KEY (user_id) REFERENCES users(id)
-                                        )");
+            // $this->table = 'sessions';
+            // $this->pdo->exec("CREATE TABLE IF NOT EXISTS " . $this->table . " (
+            //                                 id TEXT PRIMARY KEY AUTOINCREMENT,
+            //                                 user_id INTEGER NOT NULL,
+            //                                 FOREIGN KEY (user_id) REFERENCES users(id)
+            //                             )");
         } catch (\PDOException $e) {
             die("Database error: " . $e->getMessage());
         }
@@ -54,6 +54,5 @@ class SessionRepository
     {
         $stmn = $this->pdo->prepare("DELETE FROM sessions WHERE id = ?");
         $stmn->execute([$id]);
-
     }
 }

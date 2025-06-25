@@ -1,11 +1,29 @@
+<?php
+// echo "<pre>";
+// print_r($form);
+
+// print_r($tags);
+
+// print_r($errors);
+// echo "</pre>";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/../../assets/style_output.css" rel="stylesheet">
-    <title>PHP UPdate FOrm</title>
+    <script>
+        window.server = {
+            tags: <?= json_encode(array_map(fn($tag) => ['id' => (int)$tag->id, 'title' => $tag->title], $tags)); ?>,
+            current_tags: <?= json_encode(array_map(fn($tag) => ['id' => (int)$tag->id, 'title' => $tag->title], $form->tags)); ?>
+        }
+    </script>
+    <!-- <script type="module" src="http://localhost:5173/resources/tailwind/todo_update.ts"></script> -->
+    <script type="module" src="/assets/todo_update-CUgqp2MY.js "></script>
+    <link rel="stylesheet" href="/assets/index-BvRfNH8U.css">
+    <title>PHP UPdate FOrm sss</title>
 </head>
 
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
@@ -82,6 +100,45 @@
                 <?php } ?>
             </div>
 
+
+            <!-- Tags -->
+            <div x-data="tagDropdown()">
+                <label for="tags" class="block text-sm font-medium text-gray-700">Tags</label>
+                <!-- 🔥 Hidden input to submit selected array -->
+                <template x-for="(item, index) in selected" :key="index">
+                    <input type="hidden" name="tags[]" :value="item.id">
+                </template>
+                <div class="relative w-full">
+                    <button @click="open = !open" type="button"
+                        class="w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                        <template x-if="selected.length === 0">
+                            <span class="text-gray-400 px-4  ">Select Tags...</span>
+                        </template>
+                        <template x-for="item in selected" :key="item.id">
+                            <span class="inline-block mr-2 rounded-full text-xs">
+                                <span x-text="item.title" class="bg-blue-200 text-black px-2 py-1 rounded-md"></span>
+                            </span>
+                        </template>
+                    </button>
+
+                    <div x-show="open" @click.away="open = false" class="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto">
+                        <template x-for="tag in tags" :key="tag.id">
+                            <div @click="toggle(tag)" class="cursor-pointer select-none relative py-2 px-4 pl-10 pr-4 hover:bg-indigo-50 text-sm text-gray-700">
+                                <span x-text="tag.title"></span>
+                                <template x-if="selected.some(t => t.id === tag.id)">
+                                    <span class="absolute left-2 top-2 text-indigo-600">✔️</span>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <?php if (isset($errors['tags'])) { ?>
+                    <p class="text-red-600 text-sm"><?= $errors['tags'] ?></p>
+                <?php } ?>
+            </div>
+
+
             <!-- Action Buttons -->
             <div class="flex justify-between space-x-4">
                 <button type="submit"
@@ -94,6 +151,7 @@
             </div>
         </form>
     </div>
+
 </body>
 
 </html>

@@ -2,9 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script type="module" src="http://localhost:5173/resources/tailwind/index.ts"></script> -->
+    <script type="module" src="/assets/index-B5S487x2.js"></script>
+    <link rel="stylesheet" href="/assets/index-BvRfNH8U.css">
+
     <title>Register</title>
-    <link href="/../../assets/style_output.css" rel="stylesheet">
 
 </head>
 
@@ -27,12 +32,12 @@
         <!-- Register Form -->
         <form action="/register" method="POST" class="space-y-4">
             <div>
-                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                <input id="name" name="name" type="text" placeholder="Full Name" required
-                    class="w-full shadow-sm border-gray-300 px-4 py-2 border rounded" value="<?= $form->name ?? "" ?>">
-                <small class="text-gray-500">Enter your full legal name. min 4 character.</small>
-                <?php if (isset($errors['name'])) { ?>
-                    <p class="text-red-600 text-sm"><?= $errors['name'] ?></p>
+                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                <input id="username" name="username" type="text" placeholder="Username" required
+                    class="w-full shadow-sm border-gray-300 px-4 py-2 border rounded" value="<?= $form->username ?? "" ?>">
+                <small class="text-gray-500">Enter your username. min 4 character.</small>
+                <?php if (isset($errors['username'])) { ?>
+                    <p class="text-red-600 text-sm"><?= $errors['username'] ?></p>
                 <?php } ?>
             </div>
 

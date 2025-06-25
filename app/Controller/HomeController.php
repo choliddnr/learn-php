@@ -20,9 +20,14 @@ class HomeController extends Controller
         // Load the index view
         // return $this->redirect('/todo');
         $user = $this->getFlashData('user');
+        $profile = $this->getFlashData('profile') ?? $this->user_service->getProfileById(SessionService::$user_id);
+        if (!$profile) $this->redirect("/user/create");
         $data = [
             'user' => $user ?? $this->user_service->getById(SessionService::$user_id),
+            'profile' => $profile ?? $this->user_service->getProfileById(SessionService::$user_id),
         ];
+
+
         // var_dump($data);
         return $this->view("index", $data);
     }

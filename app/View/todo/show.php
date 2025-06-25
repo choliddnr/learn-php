@@ -30,15 +30,27 @@ function getTimeLeft($deadline)
 
     return implode(' ', $result) . ' left';
 }
+
+// echo "<pre>";
+// print_r($todo);
+// echo "</pre>";
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html en="lang">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Todo Item</title>
-    <link href="/../../assets/style_output.css" rel="stylesheet">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/assets/index-BvRfNH8U.css">
+
+    <!-- <script type="module" src="http://localhost:5173/resources/tailwind/todo_show.ts"></script> -->
+
+    <script type="module" src="/assets/todo_show-ZI7IqLeI.js"></script>
+
+    <title>Show todo</title>
 </head>
 
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
@@ -54,10 +66,12 @@ function getTimeLeft($deadline)
                 <?= htmlspecialchars($todo->status) ?>
             </span>
         </p>
-
         <p class="mb-6 text-gray-600"><strong>Deadline:</strong> <?= getTimeLeft($todo->deadline) ?></p>
-
-        <!-- Action Buttons -->
+        <?php
+        foreach ($todo->tags as $tag) {
+            echo '<span class="inline-block bg-sky-200 text-gray-800 px-4 py-2 text-sm rounded-3xl font-bold mr-2 mb-2">' . htmlspecialchars($tag->title) . '</span>';
+        }
+        ?>
         <div class="flex justify-between space-x-4">
             <a href="/todo"
                 class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded text-center">
@@ -78,11 +92,11 @@ function getTimeLeft($deadline)
         function deleteTodo(id) {
             if (confirm("Are you sure you want to delete this todo?")) {
                 fetch('/todo/' + id, {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                })
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                    })
                     .then(response => {
                         if (response.ok) {
                             console.log("Todo deleted successfully.");

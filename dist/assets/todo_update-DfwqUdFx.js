@@ -1,0 +1,1 @@
+import"./index-oHv7AdBJ.js";import{m as n}from"./module.esm-Cm4okMZt.js";const o=window.server.tags||[],d=window.server.current_tags||[];function i(){return{open:!1,selected:[...d],toggle(e){const t=this.selected.findIndex(s=>s.id===e.id);t>-1?this.selected.splice(t,1):this.selected.push(e)}}}window.tagDropdown=i;window.tags=o;n.start();

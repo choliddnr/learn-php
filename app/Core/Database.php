@@ -15,7 +15,14 @@ class Database
         }
         try {
             $config = require_once __DIR__ . "/../../config/database.php";
-            self::$pdo = new PDO($config['dsn'] . ":" . $config['path']);
+            if ($config['dsn'] === 'sqlite') {
+                // For SQLite, we use the path directly
+                self::$pdo = new PDO($config['dsn'] . ":" . $config['path']);
+            } else {
+                // For MySQL, we use the DSN, user, and password
+                self::$pdo = new PDO($config['dsn'], $config['user'], $config['password']);
+            }
+            // self::$pdo = new PDO($config['dsn'] . ":" . $config['path']);
             self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return self::$pdo;
         } catch (PDOException $e) {
@@ -37,6 +44,4 @@ class Database
     {
         self::$pdo->rollback();
     }
-
-
 }

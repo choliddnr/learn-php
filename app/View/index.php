@@ -2,26 +2,42 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script type="module" src="http://localhost:5173/resources/tailwind/index.ts"></script> -->
+
+    <script type="module" src="/assets/index-B5S487x2.js"></script>
+    <link rel="stylesheet" href="/assets/index-BvRfNH8U.css">
     <title>Todo Item</title>
-    <link href="/../../assets/style_output.css" rel="stylesheet">
 </head>
 
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <pre>
-        <!-- <?= print_r($user, true) ?> -->
-    </pre>
+    <!-- <pre>
+     
+    </pre> -->
     <div class="bg-white p-8 rounded shadow-md max-w-md w-full">
-        <h1 class="text-2xl font-bold mb-4 text-gray-800">User Info</h1>
+        <h1 class="text-2xl font-bold mb-4 text-gray-800"><?= $profile->fullname ?></h1>
 
-        <p class="mb-2 text-gray-600 grid grid-cols-2"><strong>Name:</strong> <span
-                class="underline font-medium"><?= $user->name ?></span></p>
+        <p class="mb-2 text-gray-600 grid grid-cols-2"><strong>username:</strong> <span
+                class="underline font-medium"><?= $user->username ?></span></p>
         <p class="mb-2 text-gray-600  grid grid-cols-2"><strong>Email:</strong> <span
                 class="underline font-medium"><?= $user->email ?></span></p>
         <p class=" mb-2 text-gray-600 grid grid-cols-2"><strong>Registered
                 at: </strong> <span class="underline font-medium"><?= $user->created_at ?></span></p>
 
+        <br>
 
+
+        <p class="mb-2 text-gray-600 grid grid-cols-2"><strong>whatsapp:</strong> <span
+                class="underline font-medium"><?= $profile->whatsapp ?></span></p>
+        <p class="mb-2 text-gray-600  grid grid-cols-2"><strong>gender:</strong> <span
+                class="underline font-medium"><?php if ((int)$profile->gender === 0) {
+                                                    echo "Female";
+                                                } else {
+                                                    echo "Male";
+                                                } ?></span></p>
+        <p class=" mb-2 text-gray-600 grid grid-cols-2"><strong>avatar: </strong> <img src="/uploads/<?= htmlspecialchars($profile->avatar) ?>" /></p>
         <!-- Action Buttons -->
         <div class="flex justify-between space-x-4">
             <a href="/todo"
@@ -47,11 +63,11 @@
         function deleteAccount(id) {
             if (confirm("Are you sure you want to delete your account?")) {
                 fetch('/user', {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                })
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                    })
                     .then(response => {
                         if (response.ok) {
                             console.log("Account deleted successfully.");

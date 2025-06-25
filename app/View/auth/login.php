@@ -2,9 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script type="module" src="http://localhost:5173/resources/tailwind/index.ts"></script> -->
+    <script type="module" src="/assets/index-B5S487x2.js"></script>
+    <link rel="stylesheet" href="/assets/index-BvRfNH8U.css">
+
     <title>Login </title>
-    <link href="/../../assets/style_output.css" rel="stylesheet">
 </head>
 
 <body class="flex items-center justify-center min-h-screen bg-gray-100">

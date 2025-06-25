@@ -4,14 +4,14 @@ namespace App\Model;
 
 class UserRegisterRequest
 {
-    public string $name;
+    public string $username;
     public string $email;
     public string $password;
     public string $confirm_password;
 
-    public function __construct(string $name, string $email, string $password, string $confirm_password)
+    public function __construct(string $username, string $email, string $password, string $confirm_password)
     {
-        $this->name = $name;
+        $this->username = $username;
         $this->email = $email;
         $this->password = $password;
         $this->confirm_password = $confirm_password;

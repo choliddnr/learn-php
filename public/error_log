@@ -1,0 +1,49 @@
+[28-Apr-2025 21:36:38 Asia/Jakarta] PHP Warning:  require_once(/home/tsuy6181/public_html/phpdemo/public/../app/router/routes.php): Failed to open stream: No such file or directory in /home/tsuy6181/public_html/phpdemo/public/index.php on line 8
+[28-Apr-2025 21:36:38 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Failed opening required '/home/tsuy6181/public_html/phpdemo/public/../app/router/routes.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/tsuy6181/public_html/phpdemo/public/index.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/tsuy6181/public_html/phpdemo/public/index.php on line 8
+[28-Apr-2025 21:38:56 Asia/Jakarta] PHP Warning:  require_once(/home/tsuy6181/public_html/phpdemo/public/../app/router/routes.php): Failed to open stream: No such file or directory in /home/tsuy6181/public_html/phpdemo/public/index.php on line 8
+[28-Apr-2025 21:38:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Failed opening required '/home/tsuy6181/public_html/phpdemo/public/../app/router/routes.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/tsuy6181/public_html/phpdemo/public/index.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/tsuy6181/public_html/phpdemo/public/index.php on line 8
+[28-Apr-2025 21:38:56 Asia/Jakarta] PHP Warning:  require_once(/home/tsuy6181/public_html/phpdemo/public/../app/router/routes.php): Failed to open stream: No such file or directory in /home/tsuy6181/public_html/phpdemo/public/index.php on line 8
+[28-Apr-2025 21:38:56 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Failed opening required '/home/tsuy6181/public_html/phpdemo/public/../app/router/routes.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/tsuy6181/public_html/phpdemo/public/index.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/tsuy6181/public_html/phpdemo/public/index.php on line 8
+[28-Apr-2025 21:39:54 Asia/Jakarta] PHP Warning:  require_once(/home/tsuy6181/public_html/phpdemo/app/Middleware/../core/Middleware.php): Failed to open stream: No such file or directory in /home/tsuy6181/public_html/phpdemo/app/Middleware/AuthMiddleware.php on line 5
+[28-Apr-2025 21:39:54 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Failed opening required '/home/tsuy6181/public_html/phpdemo/app/Middleware/../core/Middleware.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home/tsuy6181/public_html/phpdemo/app/Middleware/AuthMiddleware.php:5
+Stack trace:
+#0 /home/tsuy6181/public_html/phpdemo/vendor/composer/ClassLoader.php(576): include()
+#1 /home/tsuy6181/public_html/phpdemo/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}('/home/tsuy6181/...')
+#2 /home/tsuy6181/public_html/phpdemo/app/Core/Router.php(49): Composer\Autoload\ClassLoader->loadClass('App\\Middleware\\...')
+#3 /home/tsuy6181/public_html/phpdemo/app/Core/Router.php(83): App\Core\Router::executeRoute(Array)
+#4 /home/tsuy6181/public_html/phpdemo/app/Core/Router.php(161): App\Core\Router::dispatch('/', 'GET')
+#5 /home/tsuy6181/public_html/phpdemo/app/Router/routes.php(34): App\Core\Router::run()
+#6 /home/tsuy6181/public_html/phpdemo/public/index.php(8): require_once('/home/tsuy6181/...')
+#7 {main}
+  thrown in /home/tsuy6181/public_html/phpdemo/app/Middleware/AuthMiddleware.php on line 5
+[30-Apr-2025 15:43:51 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 24
+[30-Apr-2025 15:43:51 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 24
+[30-Apr-2025 15:43:51 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/tsuy6181/public_html/phpdemo/app/Service/UserService.php:53) in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 18
+[30-Apr-2025 15:44:06 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 24
+[30-Apr-2025 15:44:06 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 24
+[30-Apr-2025 15:44:06 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/tsuy6181/public_html/phpdemo/app/Service/UserService.php:53) in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 18
+[30-Apr-2025 15:45:06 Asia/Jakarta] PHP Warning:  Undefined array key "email" in /home/tsuy6181/public_html/phpdemo/app/Controller/UserController.php on line 48
+[30-Apr-2025 15:45:06 Asia/Jakarta] PHP Deprecated:  Creation of dynamic property App\Model\UserUpdateProfileRequest::$email is deprecated in /home/tsuy6181/public_html/phpdemo/app/Controller/UserController.php on line 48
+[30-Apr-2025 15:45:06 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/tsuy6181/public_html/phpdemo/app/Controller/UserController.php:48) in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 18
+[30-Apr-2025 15:45:10 Asia/Jakarta] PHP Deprecated:  Creation of dynamic property App\Model\UserUpdateProfileRequest::$email is deprecated in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 31
+[30-Apr-2025 15:45:10 Asia/Jakarta] PHP Warning:  session_start(): Session cache limiter cannot be sent after headers have already been sent (output started at /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php:31) in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 31
+[30-Apr-2025 15:45:10 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 31
+[30-Apr-2025 15:45:12 Asia/Jakarta] PHP Deprecated:  Creation of dynamic property App\Model\UserUpdateProfileRequest::$email is deprecated in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 31
+[30-Apr-2025 15:45:12 Asia/Jakarta] PHP Warning:  session_start(): Session cache limiter cannot be sent after headers have already been sent (output started at /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php:31) in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 31
+[30-Apr-2025 15:45:12 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 31
+[30-Apr-2025 15:45:12 Asia/Jakarta] PHP Deprecated:  Creation of dynamic property App\Model\UserUpdateProfileRequest::$email is deprecated in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 31
+[30-Apr-2025 15:45:12 Asia/Jakarta] PHP Warning:  session_start(): Session cache limiter cannot be sent after headers have already been sent (output started at /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php:31) in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 31
+[30-Apr-2025 15:45:12 Asia/Jakarta] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 31
+[30-Apr-2025 15:45:15 Asia/Jakarta] PHP Deprecated:  Creation of dynamic property App\Model\UserUpdateProfileRequest::$email is deprecated in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 31
+[30-Apr-2025 15:45:15 Asia/Jakarta] PHP Warning:  session_start(): Session cache limiter cannot be sent after headers have already been sent (output started at /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php:31) in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 31
+[30-Apr-2025 15:51:20 Asia/Jakarta] PHP Deprecated:  Creation of dynamic property App\Model\UserUpdateProfileRequest::$email is deprecated in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 31
+[30-Apr-2025 15:51:20 Asia/Jakarta] PHP Warning:  session_start(): Session cache limiter cannot be sent after headers have already been sent (output started at /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php:31) in /home/tsuy6181/public_html/phpdemo/app/Core/Controller.php on line 31
