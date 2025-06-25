@@ -2,6 +2,7 @@
 # PHP specific
 # /vendor/ // since my hosting doesn't support ssh to run composer install, allow git to upload vendor folder
 /.env
+/vendor_bc/ 
 
 # SQLite
 # *.sqlite
