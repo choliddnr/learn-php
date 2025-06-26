@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Core;
+
 class Router
 {
     private static $routes = [];
@@ -28,7 +29,6 @@ class Router
             'function' => $function,
             'middleware' => $middleware
         ];
-
     }
 
     protected static function executeRoute($route, $params = [])
@@ -81,11 +81,11 @@ class Router
             $routePaths = $route['paths'];
             $routePathsNumber = count($routePaths);
 
-           
 
-            if ($routePathsNumber === 0 && $path === '') {
-                
-             
+
+            if ($routePathsNumber === 0 && ($path === '' || $path === '/')) {
+
+
 
                 // $controller = new $route['controller'];
                 // $function = $route['function'];
@@ -144,14 +144,12 @@ class Router
 
                     return self::executeRoute($route, $params);
                 }
-
             }
             // }
 
         }
         http_response_code(404);
         echo "<br/>404 - Not Found";
-
     }
 
     public static function run()
@@ -161,7 +159,7 @@ class Router
         $uri = $_SERVER['REQUEST_URI'];
         $path = parse_url($uri, PHP_URL_PATH);
 
-      
+
 
         // Remove base path and index.php if they exist
         $path = preg_replace('#^' . preg_quote($basePath, '#') . '(index\.php)?/?#', '', $path);
