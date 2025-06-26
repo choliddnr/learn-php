@@ -11,7 +11,7 @@
         }
     </script>
     <!-- <script type="module" src="http://localhost:5173/resources/tailwind/todo_create.ts"></script> -->
-    <script type="module" src="public/assets/todo_create-B7q2zh-K.js"></script>
+    <script type="module" src="/assets/todo_create-B7q2zh-K.js"></script>
     <link rel="stylesheet" href="/assets/index-BvRfNH8U.css">
 
     <title>Add New Todo</title>
